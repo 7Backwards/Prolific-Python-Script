@@ -7,7 +7,7 @@ Python3 script that aims to auto accept incoming surveys on Prolific AC and noti
 
 - 10s Refresh oposed to 60s refresh time on the Prolific AC official extension.
 
-- Email notification when a survey is accepted.
+- Email notification via gmail when a survey is accepted.
 
 
 ## Instalation:

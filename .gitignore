@@ -1,3 +1,4 @@
 # Gitignore created to hide real script with sensitive information
 
 Script.py
+test.py

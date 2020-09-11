@@ -34,7 +34,7 @@ while(True):
             
             options = webdriver.ChromeOptions()
             options.add_argument("user-data-dir=") # Google Chrome User Data Folder
-            options.add_argument('-headless') # Comment if you want to see chrome appearing
+            #options.add_argument('-headless') # Comment if you want to see chrome appearing
             driver = webdriver.Chrome(options=options)
             driver.get(url)
             wait = WebDriverWait(driver, 10)

@@ -49,7 +49,7 @@ while(True):
                     print("Sending email")
                     fromaddr = '' # From Email Address
                     toaddrs  = '' # To Email Address
-                    msg = 'New Survey Found!!! \n' + url 
+                    msg = description + '\n URL: ' + url 
                     username = '' # From Email Address Username
                     password = '' # From Email Address Password
                     server = smtplib.SMTP('smtp.gmail.com:587')

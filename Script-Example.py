@@ -43,7 +43,8 @@ while(True):
                 search.click()
                 search1 = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'el-button--primary')))
                 search1.click()
-
+                
+                print("Button clicks done")
                 if search != search1:
                     
                     print("Sending email")
@@ -61,7 +62,7 @@ while(True):
                     print("Email sent")
                     break
                 else:
-                    
+                    print("Button clicks not the same")
                     alertText = driver.find_element_by_class_name('el-notification__content').text
                     if alertText == "The study is no longer active. We apologise for the inconvenience. Your account is in good standing.":
                         driver.close()

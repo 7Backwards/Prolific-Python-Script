@@ -64,7 +64,8 @@ while(True):
                 else:
                     print("Button clicks not the same")
                     alertText = driver.find_element_by_class_name('el-notification__content').text
-                    if alertText == "The study is no longer active. We apologise for the inconvenience. Your account is in good standing.":
+                    if alertText == "The study is no longer active. We apologise for the inconvenience. Your account is in good standing." or alertText == "The study is full and therefore submissions can't be accepted at this time. We apologise for the inconvenience. Your account is in good standing.":
+                        print("Study closed")
                         driver.close()
                         break
             except :

@@ -32,13 +32,19 @@ while(True):
 
         url = "https://app.prolific.co/studies/" + study_id 
         print(url)
+        try:
+
+            options = webdriver.ChromeOptions()
+            options.add_argument("user-data-dir=") # Google Chrome User Data Folder
+            #options.add_argument('-headless') # Comment if you want to see chrome appearing
+            driver = webdriver.Chrome(options=options)
+            driver.get(url)
+        except:
+
+            print("Error drive.get")
         while (True):
             try:
-                options = webdriver.ChromeOptions()
-                options.add_argument("user-data-dir=") # Google Chrome User Data Folder
-                #options.add_argument('-headless') # Comment if you want to see chrome appearing
-                driver = webdriver.Chrome(options=options)
-                driver.get(url)
+                
                 wait = WebDriverWait(driver, 10)
                 
                 search = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'el-button--primary')))
@@ -62,6 +68,7 @@ while(True):
                     server.sendmail(fromaddr, toaddrs, msg)
                     server.quit()
                     print("Email sent")
+                    driver.close()
                     break
                 else:
                     print("Button clicks not the same")
@@ -70,7 +77,12 @@ while(True):
                         print("Study closed")
                         driver.close()
                         break
-            except :
+                    else:
+                        driver.refresh()
+            except:
+
                 print("Error")
+                driver.close()
+                break
                 
-            driver.close()
+            

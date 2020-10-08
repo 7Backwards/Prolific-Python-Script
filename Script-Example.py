@@ -3,6 +3,7 @@ import requests
 import json
 import time
 
+from time import gmtime, strftime  
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
@@ -13,6 +14,7 @@ while(True):
     try:
         time.sleep(10) # Refreshes every 10s, i recommend not going any lower as there might be security methods implemented
         resp = requests.get('https://www.prolific.co/api/v1/studies/?current=1', data={}, auth=('', '')) # Prolific ID and Password
+        print(strftime("%H:%M:%S", gmtime()))
         print(resp)
         wjson = resp.content
         wjdata = json.loads(wjson)

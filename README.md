@@ -18,7 +18,7 @@ Python3 script that aims to auto accept incoming surveys on Prolific AC and noti
 
 - Install the following dependencies: [selenium](https://pypi.org/project/selenium/), [requests](https://pypi.org/project/requests/), [smtplib](https://docs.python.org/3.4/library/smtplib.html) and [json](https://docs.python.org/3/library/json.html).
 
-- Complete the script with the sensitive data requested.
+- Complete the script with the data requested.
 
 - Run the script
 
